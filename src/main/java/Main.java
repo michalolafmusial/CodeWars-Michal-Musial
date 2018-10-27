@@ -8,6 +8,20 @@ import java.util.stream.Collectors;
 public class Main {
 
     public static void main(String[] args) {
+
+        // getVertex wspolrzedne wierzcholka paraboli
+        int a = 2;
+        int b = 4;
+        int c = 6;
+        System.out.println("p=" + getVertex(a, b, c)[0] + ", q= " + getVertex(a, b, c)[1]);
+
+        // getPerimeter - calculate perimeter with input: width and length
+        int length = 10;
+        int width = 6;
+        System.out.println("Perimeter of rectangle where lenght = " + length + "; width = " + width + " is: "
+                + getPerimeter(length, width));
+
+
         //Run toBinary
         System.out.println(toBinary(57));
 
@@ -38,6 +52,25 @@ public class Main {
 
         String phrase1 = "Michal Musial to ja";
         System.out.println(convertFirstLetterOfStringValuesToUpper(phrase1));
+    }
+
+// calculate vertex form of quadratic function from standard form
+    // zwraca funkcje kwadratowa w postaci kanonicznej (wspolrzedne wierzchołka)
+
+    public static double[] getVertex(double a, double b, double c) {
+
+        double[] returnArray = new double[2];
+
+        returnArray[0] = (-b) / (2 * a);
+        returnArray[1] = -((b * b - 4 * a * c) / (4 * a));
+        return returnArray;
+    }
+
+
+    // Calculate Perimeter of . give length and width
+    public static int getPerimeter(int length, int width) {
+
+        return ((2 * length) + (2 * width));
     }
 
 
